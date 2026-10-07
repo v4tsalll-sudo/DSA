@@ -1,0 +1,30 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class prac5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int len = sc.nextInt();
+        int arr[] = new int[len];
+        
+        for (int i = 0; i < len; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        System.out.println("Original array : " + Arrays.toString(arr));
+        
+        int left = 0;
+        int right = len - 1;
+        
+        while (left <= right) {
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
+            left++;
+            right--;  
+        }
+
+        System.out.println("Reversed array: " + Arrays.toString(arr));
+    }
+}    
